@@ -1,0 +1,14 @@
+h1 タスク登録
+
+.nab.justify-content-end
+  = link_to "一覧", tasks_path,class:"nav-link"
+
+= form_with(model: Task.new, url: "/tasks", local: true) do |f|
+  .form_group
+    = f.label :name
+    = f.text_field :name, class: "form-control", id: "task_name"
+  .form_group
+    = f.label :description
+    = f.text_field :description, class: "form-control", id: "task_description"
+  = f.submit nil, class:"btn btn-primary"
+        

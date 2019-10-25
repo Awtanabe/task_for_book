@@ -1,0 +1,20 @@
+
+
+@startuml
+
+class タスク <<Task>>{
+  ID <<id>>
+  名前 <<name>>
+  詳細 <<description>>
+  登録日 <<created_at>>
+  更新日 <<updated_at>>
+}
+
+class タスク <<Task>>{
+  ID <<id>>
+  名前 <<name>>
+  登録日 <<created_at>>
+  更新日 <<updated_at>>
+}
+
+@enduml
