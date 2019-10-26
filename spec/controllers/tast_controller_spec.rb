@@ -10,6 +10,16 @@ RSpec.describe TasksController, type: :controller do
     end
   end
 
+  
+  describe "show" do 
+    it "success" do 
+      task = create(:task)
+       
+      get :show, params: {id: task.id} 
+      expect(response).to render_template :show  
+    end
+  end
+
   describe "create" do 
     it "success" do
       post :create, params: {
