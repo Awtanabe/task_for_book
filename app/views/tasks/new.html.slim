@@ -8,7 +8,7 @@ h1 タスク登録
     - @task.errors.full_messages.each do |message|
       li.alert.alert-danger = message
 
-= form_with(model: @task, url: "/tasks", local: true) do |f|
+= form_with(model: @task, url: "/tasks", local: true, url: confirm_new_task_path) do |f|
   .form_group
     = f.label :name
     = f.text_field :name, class: "form-control", id: "task_name"
