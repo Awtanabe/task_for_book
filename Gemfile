@@ -32,6 +32,7 @@ gem 'bootstrap'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'rails_autolink'
+gem "ransack"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rails-controller-testing'
@@ -42,6 +43,7 @@ gem "pry-rails"
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bcrypt', '~> 3.1.7'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
