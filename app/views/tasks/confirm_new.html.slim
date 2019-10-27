@@ -11,5 +11,9 @@ h1 登録画面の確認
         th=Task.human_attribute_name(:description)
         td= simple_format(@task.description)
         = f.hidden_field :description
+      tr
+        th=Task.human_attribute_name(:description)
+        td= image_tag @task.image if @task.image.attached?
+        = f.hidden_field :image
   = f.submit '戻る', name: 'back', class: "btn btn-secondary mr-3"
   = f.submit "登録", class:"btn btn-primary"       

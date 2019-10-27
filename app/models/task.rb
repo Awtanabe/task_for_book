@@ -1,7 +1,8 @@
 class Task < ApplicationRecord
  validates :name, presence: true 
  validate :validate_name_not_inclueding_column
- 
+ has_one_attached :image
+
  scope :recent, -> { order(created_at: :desc) }
 
  belongs_to :user
