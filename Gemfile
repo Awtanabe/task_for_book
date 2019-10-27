@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'rails_autolink'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rails-controller-testing'
