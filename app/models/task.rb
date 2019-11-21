@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
  validates :name, presence: true 
  validate :validate_name_not_inclueding_column
+ validate :validate_long_name
  has_one_attached :image
 
  scope :recent, -> { order(created_at: :desc) }
@@ -31,6 +32,10 @@ class Task < ApplicationRecord
 
   def validate_name_not_inclueding_column
     errors.add(:name, "にカンマを含める事はできません") if name&.include?(',')
+  end
+
+  def validate_long_name
+    errors.add(:name, "名前が長すぎます") if name.length > 5
   end
 
   def self.ransakable_attributes(auth_object = nil)

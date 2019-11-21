@@ -16,7 +16,6 @@ h1 タスク一覧
       =f.search_field :description_cont, class: 'form-control'
   .form-group
     = f.submit class: ' btn btn-outline-primary'
-
 = link_to "新規登録", new_task_path , class: "btn btn-primary"
 .mb-3
   = paginate @tasks
