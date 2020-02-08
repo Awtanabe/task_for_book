@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import user from '../../assets/user.scss'
+import Image from 'react-image-resizer';
+
 class User extends React.Component {
   constructor(props){
     super(props)
@@ -23,7 +25,7 @@ class User extends React.Component {
         <h3>マイページ</h3>
         <p>{`名前: ${this.state.name}`}</p>
         <p>{`メールアドレス: ${this.state.email}`}</p>
-        <img src={this.state.image} width="300px" height="400px"/>
+        <img src={this.state.image} width={240} height={240}/>
         <button onClick={()=> this.handleEdit()}>編集する</button>
       </React.Fragment>
     )
@@ -58,7 +60,7 @@ class User extends React.Component {
   renderEditUser(){
     return(
       <React.Fragment>
-        <img src={this.state.image}/>
+        <img src={this.state.image}  width={240} height={240}/>
         <form onSubmit={(e)=> this.handleSubmit(e)}>
           <input type="file" name="image" onChange={(e) => this.haneldUpload(e)}/><br/>
           <input type="text" name="name" defaultValue={this.state.name}/><br/>
