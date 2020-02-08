@@ -48,6 +48,7 @@ gem 'sidekiq'
 gem 'webpacker'
 gem 'react-rails'
 gem 'rack-cors'
+gem 'carrierwave'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

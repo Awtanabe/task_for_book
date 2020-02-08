@@ -7,6 +7,7 @@ class User extends React.Component {
     this.state = {
       name: this.props.user.name,
       email: this.props.user.email,
+      image: this.props.user.image.url,
       ediable: false
     }
   }
@@ -22,6 +23,7 @@ class User extends React.Component {
         <h3>マイページ</h3>
         <p>{`名前: ${this.state.name}`}</p>
         <p>{`メールアドレス: ${this.state.email}`}</p>
+        <img src={this.state.image} width="300px" height="400px"/>
         <button onClick={()=> this.handleEdit()}>編集する</button>
       </React.Fragment>
     )
@@ -31,8 +33,10 @@ class User extends React.Component {
     e.preventDefault()
     
     const formDate = new FormData();
+
     formDate.append("user[name]", e.target.name.value)
     formDate.append("user[email]", e.target.email.value)
+    formDate.append("user[image]", e.target.image.files[0])
 
     fetch(`/admin/users/${this.props.user.id}`,{
       method: "PUT",
@@ -41,7 +45,8 @@ class User extends React.Component {
       body: formDate
     }).then((response) => console.log(response))
     
-    this.setState({["name"]: e.target.name.value,["email"]: e.target.email.value})
+    const url = URL.createObjectURL( e.target.image.files[0])
+    this.setState({["name"]: e.target.name.value,["email"]: e.target.email.value, ["image"]:url})
 
   }
 
@@ -49,6 +54,7 @@ class User extends React.Component {
     return(
       <React.Fragment>
         <form onSubmit={(e)=> this.handleSubmit(e)}>
+          <input type="file" name="image"/><br/>
           <input type="text" name="name" defaultValue={this.state.name}/><br/>
           <input type="text" name="email" defaultValue={this.state.email}/><br/>
           <input type="submit" value="保存"/>
@@ -68,7 +74,6 @@ class User extends React.Component {
 
   render () {
     const {ediable} = this.state
-    debugger
     return (
       <React.Fragment>
         <div className="container">
