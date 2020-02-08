@@ -45,16 +45,22 @@ class User extends React.Component {
       body: formDate
     }).then((response) => console.log(response))
     
-    const url = URL.createObjectURL( e.target.image.files[0])
+    const url = URL.createObjectURL( e.target.files[0])
     this.setState({["name"]: e.target.name.value,["email"]: e.target.email.value, ["image"]:url})
 
+  }
+
+  haneldUpload(e){
+    const url = URL.createObjectURL( e.target.files[0])
+    this.setState({image: url})
   }
 
   renderEditUser(){
     return(
       <React.Fragment>
+        <img src={this.state.image}/>
         <form onSubmit={(e)=> this.handleSubmit(e)}>
-          <input type="file" name="image"/><br/>
+          <input type="file" name="image" onChange={(e) => this.haneldUpload(e)}/><br/>
           <input type="text" name="name" defaultValue={this.state.name}/><br/>
           <input type="text" name="email" defaultValue={this.state.email}/><br/>
           <input type="submit" value="保存"/>
