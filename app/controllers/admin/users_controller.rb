@@ -1,5 +1,7 @@
 class Admin::UsersController < ApplicationController
   before_action :require_admin
+  skip_before_action :verify_authenticity_token
+
 
   def index
     @users = User.all    
@@ -29,12 +31,12 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
-    if @user.update(user_params)
-      redirect_to admin_user_path(@user)
-    else
-      render :new
-    end
+    @user.update(user_params)
+    # if 
+    #   redirect_to admin_user_path(@user)
+    # else
+    #   render :new
+    # end
   end
 
   def destroy
