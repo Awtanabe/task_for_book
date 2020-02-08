@@ -39,7 +39,7 @@ gem 'rails-controller-testing'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem "factory_girl_rails"
-gem "pry-rails"
+gem "pry-rails", '>= 0'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bcrypt', '~> 3.1.7'
@@ -55,7 +55,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'pry-rails'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -66,7 +65,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '< 2.0, >= 0.18'
+ 
 end
 
 group :test do
