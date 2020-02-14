@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
   before_action :require_admin, except: [:new, :create]
   skip_before_action :login_required, only: [:new,:create]
-  # skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
 
   def index
