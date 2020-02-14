@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
-  before_action :require_admin
-  skip_before_action :verify_authenticity_token
+  before_action :require_admin, except: [:new, :create]
+  skip_before_action :login_required, only: [:new,:create]
+  # skip_before_action :verify_authenticity_token
 
 
   def index
@@ -20,10 +21,12 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to admin_users_path
+      session[:user_id] = @user.id 
+      redirect_to root_path
     else
       render :new
     end
