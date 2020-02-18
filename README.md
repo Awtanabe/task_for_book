@@ -14,3 +14,10 @@ rails g kaminari:views bootstrap4
 rails g job sample
 
 redisも必要
+
+## rspec helpr
+
+rails_helper.rb
+
+- suppert dir作成 module作成
+- ディレクトリ読み込み

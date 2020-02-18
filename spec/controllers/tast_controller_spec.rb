@@ -1,14 +1,10 @@
 require'rails_helper'
 
-# skip_before_action :login_required
-
 RSpec.describe TasksController, type: :controller do 
- 
-  before do
 
+  before do
     @user = create(:user)
-    session[:user_id] = @user.id
-         
+    login(@user)         
   end 
   describe "index" do 
     
