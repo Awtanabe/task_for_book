@@ -5,6 +5,7 @@ RSpec.describe Admin::UsersController, type: :controller do
   describe "GET #new" do
     it "returns http success" do
       get :new
+      binding.pry
       expect(response).to have_http_status(:success)
     end
   end
