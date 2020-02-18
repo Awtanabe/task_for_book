@@ -1,8 +1,17 @@
 require'rails_helper'
 
-RSpec.describe TasksController, type: :controller do 
+# skip_before_action :login_required
 
+RSpec.describe TasksController, type: :controller do 
+ 
+  before do
+
+    @user = create(:user)
+    session[:user_id] = @user.id
+         
+  end 
   describe "index" do 
+    
     it "success" do 
       get :index
 
@@ -13,7 +22,7 @@ RSpec.describe TasksController, type: :controller do
   
   describe "show" do 
     it "success" do 
-      task = create(:task)
+      task = create(:task, user: @user)
        
       get :show, params: {id: task.id} 
       expect(response).to render_template :show  
@@ -26,7 +35,8 @@ RSpec.describe TasksController, type: :controller do
         task: 
           {
             name: "test", 
-            description:"test"
+            description:"test",
+            user_id: @user.id
           }
       }
       
@@ -36,20 +46,21 @@ RSpec.describe TasksController, type: :controller do
 
   describe "update" do 
     it "success" do 
-       @task = Task.create(name:"task1", description:"test1")
+       @task = Task.create(name:"task1", description:"test1", user: @user)
+
        params = {
-            name: "updated", 
+            name: "upda", 
             description:"test"
           }
        patch :update, params: { id: @task.id, task: params}
-       expect(@task.reload.name).to eq "updated"
+       expect(@task.reload.name).to eq "upda"
     end
   end
 
 
   describe "delete" do
    it "success" do 
-    @task = Task.create(name:"task1", description:"test1")
+    @task = Task.create(name:"task1", description:"test1", user: @user)
 
     delete :destroy, params: {id: @task.id}
     expect(Task.count).to eq 0

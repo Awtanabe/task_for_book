@@ -4,11 +4,11 @@ example_id                                               | status | run_time    
 ./spec/controllers/admin/users_controller_spec.rb[1:2:1] | failed | 0.0067 seconds      |
 ./spec/controllers/admin/users_controller_spec.rb[1:3:1] | failed | 0.00157 seconds     |
 ./spec/controllers/admin/users_controller_spec.rb[1:4:1] | failed | 0.02114 seconds     |
-./spec/controllers/tast_controller_spec.rb[1:1:1]        | passed | 0.01673 seconds     |
-./spec/controllers/tast_controller_spec.rb[1:2:1]        | passed | 0.00867 seconds     |
-./spec/controllers/tast_controller_spec.rb[1:3:1]        | passed | 0.00474 seconds     |
-./spec/controllers/tast_controller_spec.rb[1:4:1]        | passed | 0.03142 seconds     |
-./spec/controllers/tast_controller_spec.rb[1:5:1]        | passed | 0.00629 seconds     |
+./spec/controllers/tast_controller_spec.rb[1:1:1]        | passed | 0.01257 seconds     |
+./spec/controllers/tast_controller_spec.rb[1:2:1]        | passed | 0.03074 seconds     |
+./spec/controllers/tast_controller_spec.rb[1:3:1]        | passed | 0.13782 seconds     |
+./spec/controllers/tast_controller_spec.rb[1:4:1]        | passed | 0.07422 seconds     |
+./spec/controllers/tast_controller_spec.rb[1:5:1]        | passed | 0.03252 seconds     |
 ./spec/models/task_spec.rb[1:1:1]                        | passed | 0.00119 seconds     |
 ./spec/models/task_spec.rb[1:1:2]                        | passed | 1 minute 53 seconds |
 ./spec/models/user_spec.rb[1:1:1]                        | passed | 0.03136 seconds     |
