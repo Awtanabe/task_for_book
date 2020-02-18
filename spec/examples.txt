@@ -11,5 +11,5 @@ example_id                                               | status | run_time    
 ./spec/controllers/tast_controller_spec.rb[1:5:1]        | passed | 0.00629 seconds     |
 ./spec/models/task_spec.rb[1:1:1]                        | passed | 0.00119 seconds     |
 ./spec/models/task_spec.rb[1:1:2]                        | passed | 1 minute 53 seconds |
-./spec/models/user_spec.rb[1:1:1]                        | passed | 0.00482 seconds     |
-./spec/models/user_spec.rb[1:1:2]                        | passed | 0.03229 seconds     |
+./spec/models/user_spec.rb[1:1:1]                        | passed | 0.03136 seconds     |
+./spec/models/user_spec.rb[1:1:2]                        | passed | 5.84 seconds        |
