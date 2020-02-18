@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import user from '../../assets/user.scss'
-import Image from 'react-image-resizer';
+// import Image from 'react-image-resizer';
 
 class User extends React.Component {
   constructor(props){
