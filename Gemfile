@@ -32,6 +32,7 @@ gem 'bootstrap'
 # gem 'mini_magick', '~> 4.8'
 gem 'rails_autolink'
 gem "ransack"
+gem 'dotenv-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rails-controller-testing'

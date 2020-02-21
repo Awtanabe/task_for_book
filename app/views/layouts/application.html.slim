@@ -23,4 +23,11 @@ html
     .container
       - if flash.notice.present?
         .alert.alert-success = flash.notice
+
+      script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-108537919-1" 
+      javascript:
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-108537919-1');
       = yield
